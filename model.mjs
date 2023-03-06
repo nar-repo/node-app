@@ -49,3 +49,23 @@ const createUser = async (firstName, lastName) => {
 }
 
 
+const findUser = async (filter) => {
+    const query = User.find(filter)
+    return query.exec();
+}
+
+
+//const editListById = async (parameters like _id) => {
+//    const result = await objectLikeUser.replaceOne({_id:_id},
+//        {fields to replace});
+//    return result.numUPdated;
+//}
+
+
+const deleteById = async (id) => {
+    const result = await objectLikeUser.remove({_id:_id});
+    return result.deletedCount;
+}
+
+
+export {createUser, findUser, deleteById};
